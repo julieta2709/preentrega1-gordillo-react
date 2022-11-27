@@ -2,3 +2,28 @@
   margin: 0;
   padding: 0;
 }
+
+body {
+  background-color: rgb(232, 182, 232);
+}
+
+.navbar{
+  background-color: rgb(76, 10, 126);
+}
+
+.navbar-brand{
+  color: white;
+  font-weight: bold;
+  font-size: xx-large;
+  margin-left: 20px;
+  padding: 1rem;
+}
+
+.cupcake {
+  margin-right: 20px;
+}
+
+.nav-link{
+color: white;
+}
+
