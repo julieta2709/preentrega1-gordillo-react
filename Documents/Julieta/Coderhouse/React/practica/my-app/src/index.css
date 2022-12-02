@@ -27,3 +27,6 @@ body {
 color: white;
 }
 
+.btn-group{
+display: flex;  
+}
