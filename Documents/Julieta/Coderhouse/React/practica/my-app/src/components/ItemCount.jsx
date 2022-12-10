@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-const ItemCount = ({ initial, stock, onAdd }) => {
+const ItemCount = ({ stockItems }) => {
 
-    const [clicks, setClicks] = useState(parseInt(initial));
+    const [clicks, setClicks] = useState(parseInt(1));
+    const [stock, setStock] = useState(stockItems);
 
     const agregarProducto = () => {
         setClicks(clicks + 1);
@@ -12,9 +13,12 @@ const ItemCount = ({ initial, stock, onAdd }) => {
         setClicks(clicks - 1);
     };
 
-    useEffect(()=>{
-        setClicks(parseInt(initial));
-    },[initial]);
+    const onAdd = () => {
+        if (clicks <= stock) {
+            setStock(stock - clicks);
+            setClicks(1);
+        }
+    }
 
     return (
         <div className="container">

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 import CartWidget from "./CartWidget";
 
 const NavBar = () => {
@@ -8,7 +9,7 @@ const NavBar = () => {
                 <div className="col-md-10">
                     <nav className="navbar navbar-expand-lg">
                         <div className="container-fluid">
-                            <a className="navbar-brand me-auto" href="/NavBar"><img className="cupcake" src={"images/cupcake-cereza.svg"} alt="cupcake" width={40} />Tienda de cupcakes</a>
+                            <Link className="navbar-brand me-auto" to={"/"}><img className="cupcake" src={"images/cupcake-cereza.svg"} alt="cupcake" width={40} />Tienda de cupcakes</Link>
                             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                                 <span className="navbar-toggler-icon"></span>
                             </button>
@@ -19,15 +20,14 @@ const NavBar = () => {
                                             Productos
                                         </a>
                                         <ul className="dropdown-menu">
-                                            <li><a className="dropdown-item" href="/Chocolate">Cupcake de chocolate</a></li>
-                                            <li><a className="dropdown-item" href="/Vainilla">Cupcake de vainilla</a></li>
-                                            <li><a className="dropdown-item" href="/Arcoiris">Cupcake arcoiris</a></li>
-                                            <li><a className="dropdown-item" href="/RedVelvet">Cupcake Red Velvet</a></li>
+                                            <li><NavLink className="dropdown-item" to={"/category/chocolate"}>Cupcakes de chocolate</NavLink></li>
+                                            <li><NavLink className="dropdown-item" to={"category/vainilla"}>Cupcakes de vainilla</NavLink></li>
+                                            <li><NavLink className="dropdown-item" to={"/category/limon"}>Cupcakes de limón</NavLink></li>
                                         </ul>
                                     </li>
-                                    <li><a className="nav-link" href="/locales">Locales</a></li>
-                                    <li> <a className="nav-link" href="/Comprar">Comprar</a></li>
-                                    <li><a className="nav-link" href="/Nosotros">Nosotros</a></li>
+                                    <li><Link className="nav-link" to={"/"}>Locales</Link></li>
+                                    <li><Link className="nav-link" to={"/"}>Comprar</Link></li>
+                                    <li><Link className="nav-link" to={"/"}>Nosotros</Link></li>
                                 </ul>
                             </div>
                         </div>
